@@ -11,9 +11,9 @@
     <atom:link href="https://prAnjal314.github.io/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Disable IPv6 Permanenetly in Linux</title>
-      <link>https://prAnjal314.github.io/posts/how-to-disable-ipv6-permanenetly-in-linux/</link>
+      <link>https://prAnjal314.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/</link>
       <pubDate>Sun, 30 Jun 2024 14:18:15 +0530</pubDate>
-      <guid>https://prAnjal314.github.io/posts/how-to-disable-ipv6-permanenetly-in-linux/</guid>
+      <guid>https://prAnjal314.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/</guid>
       <description>In this blog I will show you, how you can enable or disable IPv6 in Linux.</description>
     </item>
   </channel>
