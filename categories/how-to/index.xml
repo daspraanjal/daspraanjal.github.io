@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>How To on Pranjal Das</title>
-    <link>https://prAnjal314.github.io/categories/how-to/</link>
+    <link>https://daspraanjal.github.io/categories/how-to/</link>
     <description>Recent content in How To on Pranjal Das</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright 2024, Pranjal Das</copyright>
     <lastBuildDate>Sun, 30 Jun 2024 15:01:20 +0530</lastBuildDate>
-    <atom:link href="https://prAnjal314.github.io/categories/how-to/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://daspraanjal.github.io/categories/how-to/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Install Matlab in Linux</title>
-      <link>https://prAnjal314.github.io/post/how-to-install-matlab-in-linux/</link>
+      <link>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/</link>
       <pubDate>Sun, 30 Jun 2024 15:01:20 +0530</pubDate>
-      <guid>https://prAnjal314.github.io/post/how-to-install-matlab-in-linux/</guid>
+      <guid>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/</guid>
       <description>In this blog I will show you, how to install matlab in Linux.</description>
     </item>
     <item>
       <title>How to Disable IPv6 Permanenetly in Linux</title>
-      <link>https://prAnjal314.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/</link>
+      <link>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/</link>
       <pubDate>Sun, 30 Jun 2024 14:18:15 +0530</pubDate>
-      <guid>https://prAnjal314.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/</guid>
+      <guid>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/</guid>
       <description>In this blog I will show you, how you can enable or disable IPv6 in Linux.</description>
     </item>
     <item>
       <title>How to Formart a USB Stick From Terminal</title>
-      <link>https://prAnjal314.github.io/post/how-to-formart-a-usb-stick-from-terminal/</link>
+      <link>https://daspraanjal.github.io/post/how-to-formart-a-usb-stick-from-terminal/</link>
       <pubDate>Sun, 30 Jun 2024 14:07:47 +0530</pubDate>
-      <guid>https://prAnjal314.github.io/post/how-to-formart-a-usb-stick-from-terminal/</guid>
+      <guid>https://daspraanjal.github.io/post/how-to-formart-a-usb-stick-from-terminal/</guid>
       <description>At first you need to identify the drive name, you can do so as follows&#xA;Deleting the partitions In the terminal type in&#xA;df which shows the list of Drives and it&amp;rsquo;s partitions. Choose the correct drive, in my case it is the /dev/sda drive. Now we would use the fdisk terminal utility for modifications in the drive, and type in&#xA;sudo fdisk /dev/sda which lets you in a interactive session, where you can perform certain operations on the selected drive, like addition, deletion, renaming of a partition.</description>
     </item>
   </channel>
