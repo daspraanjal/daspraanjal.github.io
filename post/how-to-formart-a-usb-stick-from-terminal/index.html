@@ -101,7 +101,7 @@
 <h4 id="deleting-the-partitions">Deleting the partitions</h4>
 <p>In the terminal type in</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df
-</span></span></code></pre></div><p>which shows the list of Drives and it&rsquo;s partitions. Choose the correct drive, in my case it is the <code>/dec/sda</code>  drive. Now we would use the <em>fdisk</em> terminal utility for modifications in the drive, and type in</p>
+</span></span></code></pre></div><p>which shows the list of Drives and it&rsquo;s partitions. Choose the correct drive, in my case it is the <code>/dev/sda</code>  drive. Now we would use the <em>fdisk</em> terminal utility for modifications in the drive, and type in</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fdisk /dev/sda
 </span></span></code></pre></div><p>which lets you in a interactive session, where you can perform certain operations on the selected drive, like <em>addition, deletion, renaming of a partition</em>. In our case we will delete all the existing partitions, so type in</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>d

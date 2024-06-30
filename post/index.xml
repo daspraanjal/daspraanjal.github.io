@@ -28,7 +28,7 @@
       <link>https://prAnjal314.github.io/post/how-to-formart-a-usb-stick-from-terminal/</link>
       <pubDate>Sun, 30 Jun 2024 14:07:47 +0530</pubDate>
       <guid>https://prAnjal314.github.io/post/how-to-formart-a-usb-stick-from-terminal/</guid>
-      <description>At first you need to identify the drive name, you can do so as follows&#xA;Deleting the partitions In the terminal type in&#xA;df which shows the list of Drives and it&amp;rsquo;s partitions. Choose the correct drive, in my case it is the /dec/sda drive. Now we would use the fdisk terminal utility for modifications in the drive, and type in&#xA;sudo fdisk /dev/sda which lets you in a interactive session, where you can perform certain operations on the selected drive, like addition, deletion, renaming of a partition.</description>
+      <description>At first you need to identify the drive name, you can do so as follows&#xA;Deleting the partitions In the terminal type in&#xA;df which shows the list of Drives and it&amp;rsquo;s partitions. Choose the correct drive, in my case it is the /dev/sda drive. Now we would use the fdisk terminal utility for modifications in the drive, and type in&#xA;sudo fdisk /dev/sda which lets you in a interactive session, where you can perform certain operations on the selected drive, like addition, deletion, renaming of a partition.</description>
     </item>
     <item>
       <title>Markdown Syntax Guide</title>
