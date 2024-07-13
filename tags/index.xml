@@ -7,13 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright 2024, Pranjal Das</copyright>
-    <lastBuildDate>Sun, 30 Jun 2024 15:01:20 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jul 2024 16:48:23 +0530</lastBuildDate>
     <atom:link href="https://daspraanjal.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
       <link>https://daspraanjal.github.io/tags/linux/</link>
-      <pubDate>Sun, 30 Jun 2024 15:01:20 +0530</pubDate>
+      <pubDate>Sat, 13 Jul 2024 16:48:23 +0530</pubDate>
       <guid>https://daspraanjal.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Terminal</title>
+      <link>https://daspraanjal.github.io/tags/terminal/</link>
+      <pubDate>Sat, 13 Jul 2024 16:48:23 +0530</pubDate>
+      <guid>https://daspraanjal.github.io/tags/terminal/</guid>
       <description></description>
     </item>
     <item>
@@ -21,13 +28,6 @@
       <link>https://daspraanjal.github.io/tags/matlab/</link>
       <pubDate>Sun, 30 Jun 2024 15:01:20 +0530</pubDate>
       <guid>https://daspraanjal.github.io/tags/matlab/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Terminal</title>
-      <link>https://daspraanjal.github.io/tags/terminal/</link>
-      <pubDate>Sun, 30 Jun 2024 14:07:47 +0530</pubDate>
-      <guid>https://daspraanjal.github.io/tags/terminal/</guid>
       <description></description>
     </item>
     <item>
