@@ -116,7 +116,7 @@
 </span></span></code></pre></div><p>Indentify the USB Drive from the list and find the corresponding device. In this case it is listed as <code>/dev/sda1</code></p>
 <p><img src="./images/df_output.png" alt="df output"></p>
 <blockquote>
-<p>If you are not sure about which is your USB Drive, you can just unplug and replug thr device and find out out which device is listed after plugging the USB.</p>
+<p>If you are not sure about which is your USB Drive, you can just unplug and replug the USB device and find out out which device is listed after plugging in the USB.</p>
 </blockquote>
 <h4 id="step-2-unmount-and-format-the-device">Step 2: Unmount and Format the Device</h4>
 <p>Before formatting the drive we need to unmount it, it can be done by the command</p>
@@ -137,7 +137,8 @@
 <h4 id="step-3-verify-the-formatting">Step 3: Verify The Formatting</h4>
 <p>You can verify the formatting process with the following command</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fsck /dev/<span style="color:#f92672">{</span>your_device_name<span style="color:#f92672">}</span>
-</span></span></code></pre></div><p><img src="./images/fsck_output.png" alt="fsck output"></p>
+</span></span></code></pre></div><p>From the ouptut of the command we will know that</p>
+<p><img src="./images/fsck_output.png" alt="fsck output"></p>
 <p>It is indeed formatted in FAT (32 bit) file system, and with only 1 file, which is used to store the name of the drive that we have given.</p>
 <h3 id="conclusion">Conclusion</h3>
 <p>In this article it shown how to format an USB drive to an specified file system from the terminal, follow the steps in the blog to simplify the process.</p>
