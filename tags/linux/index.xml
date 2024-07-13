@@ -14,7 +14,7 @@
       <link>https://daspraanjal.github.io/post/how-to-create-partitions-in-linux/</link>
       <pubDate>Sat, 13 Jul 2024 16:48:23 +0530</pubDate>
       <guid>https://daspraanjal.github.io/post/how-to-create-partitions-in-linux/</guid>
-      <description></description>
+      <description>Creating and modifying disk partitions is helpful for maintaining multiple file systems on same physical drive. It can simplify the backup process and system upgradation. In this blog we will use a command line utility called fdisk to create a partition in a disk.&#xA;Partitioning Disk Using fdisk command To partition a particular disk we will perform the following steps&#xA;Locating the disk on which we will create a partition Entering into an interative fdisk tui by selecting the drive Making necessary operations on the drive Writing the operations on the drive Step 1: Locating the drive We can list all the installed storage disks in our Linux machine using the command</description>
     </item>
     <item>
       <title>How to Install Matlab in Linux</title>

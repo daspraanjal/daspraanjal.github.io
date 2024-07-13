@@ -91,13 +91,39 @@
         <div class="mb-3">
             <h2 class="mb-0">How to Create Partitions in Linux</h2>
             
-            <h4>This blog shows how you can create, modify and delete partitions in Linux from the Terminal</h4>
+            <h5>This blog shows how you can create, modify and delete partitions in Linux from the Terminal</h5>
             
             <small class="text-muted">Published July 13, 2024</small>
         </div>
 
         <article>
-            
+            <p>Creating and modifying disk partitions is helpful for maintaining multiple file systems on same physical drive. It can simplify the backup process and system upgradation. In this blog we will use a command line utility called <em>fdisk</em> to create a partition in a disk.</p>
+<h3 id="partitioning-disk-using-fdisk-command">Partitioning Disk Using fdisk command</h3>
+<p>To partition a particular disk we will perform the following steps</p>
+<ol>
+<li>Locating the disk on which we will create a partition</li>
+<li>Entering into an interative <em>fdisk</em> tui by selecting the drive</li>
+<li>Making necessary operations on the drive</li>
+<li>Writing the operations on the drive</li>
+</ol>
+<h4 id="step-1-locating-the-drive">Step 1: Locating the drive</h4>
+<p>We can list all the installed storage disks in our Linux machine using the command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fdisk -l
+</span></span></code></pre></div><p>From the output of the command we can locate our desired disk where we want to create our new partition</p>
+<p><img src="./images/fdisk_output.png" alt="fdisk -l output"></p>
+<p>In this tutorial, we will use our USB stick as the disk on which we will create a new partition, and it is listed as disk <code>/dev/sda</code>.</p>
+<h3 id="step-2-selecting-the-disk">Step 2: Selecting the Disk</h3>
+<p>At first we need to unmount all the current partitions that are listed under the disk <code>/dev/sda</code> to perform any operations on it. Here, we have only partition that is currently listed under <code>/dev/sda</code> named as
+<code>/dev/sda1</code>.</p>
+<p>It can be unmounted with the command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo umount /dev/sda1
+</span></span></code></pre></div><p>After unmounting all the partitions under the disk, we can enter the fdisk terminal user interface using the command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fdisk /dev/sda
+</span></span></code></pre></div><p>Where will need to replace <code>/dev/sda</code> with the disk that you will operate on</p>
+<p><img src="./images/fdisk_diskname_output.png" alt="fdisk diskname output"></p>
+<p>The output shows a red warning that the device contains &lsquo;vfat&rsquo; signature and it will be erased after we perform the wrire operation, which is not that important.</p>
+<h3 id="step-3-performing-operations-on-the-disk">Step 3: Performing Operations on The Disk</h3>
+
         </article>
     </div>
 
