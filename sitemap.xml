@@ -2,19 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://daspraanjal.github.io/categories/</loc>
+    <lastmod>2024-07-02T23:37:55+05:30</lastmod>
+  </url><url>
+    <loc>https://daspraanjal.github.io/tags/electrical/</loc>
+    <lastmod>2024-07-02T23:37:55+05:30</lastmod>
+  </url><url>
+    <loc>https://daspraanjal.github.io/categories/electrical/</loc>
+    <lastmod>2024-07-02T23:37:55+05:30</lastmod>
+  </url><url>
+    <loc>https://daspraanjal.github.io/tags/networking/</loc>
+    <lastmod>2024-07-02T23:37:55+05:30</lastmod>
+  </url><url>
+    <loc>https://daspraanjal.github.io/categories/networking/</loc>
+    <lastmod>2024-07-02T23:37:55+05:30</lastmod>
+  </url><url>
+    <loc>https://daspraanjal.github.io/post/</loc>
+    <lastmod>2024-07-02T23:37:55+05:30</lastmod>
+  </url><url>
+    <loc>https://daspraanjal.github.io/tags/</loc>
+    <lastmod>2024-07-02T23:37:55+05:30</lastmod>
+  </url><url>
+    <loc>https://daspraanjal.github.io/post/understanding-the-osi-model/understanding-the-osi-model/</loc>
+    <lastmod>2024-07-02T23:37:55+05:30</lastmod>
+  </url><url>
+    <loc>https://daspraanjal.github.io/categories/how-to/</loc>
+    <lastmod>2024-07-02T23:34:34+05:30</lastmod>
+  </url><url>
+    <loc>https://daspraanjal.github.io/post/how-to-calculate-fault-current-of-a-busbar/how-to-calculate-fault-current-of-a-busbar/</loc>
+    <lastmod>2024-07-02T23:34:34+05:30</lastmod>
+  </url><url>
+    <loc>https://daspraanjal.github.io/tags/power-system/</loc>
+    <lastmod>2024-07-02T23:34:34+05:30</lastmod>
+  </url><url>
     <loc>https://daspraanjal.github.io/</loc>
     <lastmod>2024-06-30T15:10:18+05:30</lastmod>
   </url><url>
     <loc>https://daspraanjal.github.io/homepage/</loc>
     <lastmod>2024-06-30T15:10:18+05:30</lastmod>
   </url><url>
-    <loc>https://daspraanjal.github.io/categories/</loc>
-    <lastmod>2024-06-30T15:01:20+05:30</lastmod>
-  </url><url>
-    <loc>https://daspraanjal.github.io/categories/how-to/</loc>
-    <lastmod>2024-06-30T15:01:20+05:30</lastmod>
-  </url><url>
-    <loc>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/</loc>
+    <loc>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/how-to-install-matlab-in-linux/</loc>
     <lastmod>2024-06-30T15:01:20+05:30</lastmod>
   </url><url>
     <loc>https://daspraanjal.github.io/tags/linux/</loc>
@@ -26,22 +53,13 @@
     <loc>https://daspraanjal.github.io/tags/matlab/</loc>
     <lastmod>2024-06-30T15:01:20+05:30</lastmod>
   </url><url>
-    <loc>https://daspraanjal.github.io/post/</loc>
-    <lastmod>2024-06-30T15:01:20+05:30</lastmod>
-  </url><url>
-    <loc>https://daspraanjal.github.io/tags/</loc>
-    <lastmod>2024-06-30T15:01:20+05:30</lastmod>
-  </url><url>
-    <loc>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/</loc>
-    <lastmod>2024-06-30T14:18:15+05:30</lastmod>
-  </url><url>
-    <loc>https://daspraanjal.github.io/tags/networking/</loc>
+    <loc>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</loc>
     <lastmod>2024-06-30T14:18:15+05:30</lastmod>
   </url><url>
     <loc>https://daspraanjal.github.io/tags/terminal/</loc>
     <lastmod>2024-06-30T14:18:15+05:30</lastmod>
   </url><url>
-    <loc>https://daspraanjal.github.io/post/how-to-formart-a-usb-stick-from-terminal/</loc>
+    <loc>https://daspraanjal.github.io/post/how-to-format-an-usb-drive-from-terminal/</loc>
     <lastmod>2024-06-30T14:07:47+05:30</lastmod>
   </url><url>
     <loc>https://daspraanjal.github.io/tags/css/</loc>
@@ -53,7 +71,7 @@
     <loc>https://daspraanjal.github.io/tags/markdown/</loc>
     <lastmod>2024-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://daspraanjal.github.io/post/markdown-syntax/</loc>
+    <loc>https://daspraanjal.github.io/post/markdown-syntax/markdown-syntax/</loc>
     <lastmod>2024-06-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://daspraanjal.github.io/categories/syntax/</loc>

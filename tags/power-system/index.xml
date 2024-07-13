@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Power System on Pranjal Das</title>
+    <link>https://daspraanjal.github.io/tags/power-system/</link>
+    <description>Recent content in Power System on Pranjal Das</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright 2024, Pranjal Das</copyright>
+    <lastBuildDate>Tue, 02 Jul 2024 23:34:34 +0530</lastBuildDate>
+    <atom:link href="https://daspraanjal.github.io/tags/power-system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Calculate Fault Current of a Busbar</title>
+      <link>https://daspraanjal.github.io/post/how-to-calculate-fault-current-of-a-busbar/how-to-calculate-fault-current-of-a-busbar/</link>
+      <pubDate>Tue, 02 Jul 2024 23:34:34 +0530</pubDate>
+      <guid>https://daspraanjal.github.io/post/how-to-calculate-fault-current-of-a-busbar/how-to-calculate-fault-current-of-a-busbar/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

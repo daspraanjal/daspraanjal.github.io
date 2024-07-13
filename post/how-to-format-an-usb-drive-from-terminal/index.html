@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en-us"><head>
+    <title>Pranjal Das</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Im this blog we talk about how to edit partitions and format a usb stick in terminal" />
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/theme.min.css">
+
+    
+    
+    
+
+    
+</head>
+<body>
+        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row">
+        
+        <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+            <a href="/" class="text-decoration-none">
+                <img id="home-image" class="rounded-circle"
+                    
+                        
+                            src="/images/profile_pic.jpeg"
+                        
+                    
+                />
+            </a>
+        </div>
+        <div class="col-sm-8 col-12 text-sm-left text-center">
+        
+            <h2 class="m-0 mb-2 mt-4">
+                <a href="/" class="text-decoration-none">
+                    
+                        Pranjal Das
+                    
+                </a>
+            </h2>
+            <p class="text-muted mb-1">
+                
+                    Electric Design Engineer | Dastur | Kolkata, India
+                
+            </p>
+            <ul id="nav-links" class="list-inline mb-2">
+                
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="/" title="about">About</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="/post/" title="posts">Posts</a>
+                    </li>
+                
+            </ul>
+            <ul id="nav-social" class="list-inline">
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://github.com/daspraanjal" target="_blank">
+                            <i class="fab fa-github fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://www.linkedin.com/in/daspraanjal" target="_blank">
+                            <i class="fab fa-linkedin-in fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://x.com/daspraanjal" target="_blank">
+                            <i class="fab fa-twitter fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+    <hr />
+</header>
+<div class="container">
+    <div class="pl-sm-2">
+        <div class="mb-3">
+            <h2 class="mb-0">How to Format an USB Drive From Terminal</h2>
+            
+            <small class="text-muted">Published June 30, 2024</small>
+        </div>
+
+        <article>
+            <p>Formatting an USB-stick is a pretty easy task to do, it can be done in multiple ways, like using File managers, GUI disk utility applications like <em>Disks</em>, <em>GParted</em> etc. It can also be done fairly easily from terminal and this blog will show you how to.</p>
+<h3 id="which-file-system-you-are-going-to-use">Which File System You Are Going To Use</h3>
+<p>The file systems you can use for formatting a USB drive differ by maximum file size and operating system compatibility. The most commonly used file systems when formatting a USB drive are</p>
+<ul>
+<li>FAT32</li>
+<li>NTFS</li>
+<li>exFAT</li>
+</ul>
+<p>As FAT32 offers the most compatibility, we will format our drive with FAT32 File System.</p>
+<blockquote>
+<p>Formatting an USB drive will erase all the data stored in it, please backup all the important data before formatting.</p>
+</blockquote>
+<h3 id="formatting-the-drive">Formatting the Drive</h3>
+<p>Formatting the USB Drive is a fairly easy process to do from the terminal, it consists 3 steps -</p>
+<ol>
+<li>Locate the drive</li>
+<li>Format the drive</li>
+<li>Verify the formatting process</li>
+</ol>
+<h4 id="step-1-locate-the-usb-drive">Step 1: Locate The USB Drive</h4>
+<p>To locate the drive we wille be using a terminal utlity called <code>df</code>, it lists all mounted partitions in your computer. And to get more of a human readable output, execute the following command in your terminal</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df -h
+</span></span></code></pre></div><p>Indentify the USB Drive from the list and find the corresponding device. In this case it is listed as <code>/dev/sda1</code></p>
+<p><img src="./images/df_output.png" alt="df output"></p>
+<blockquote>
+<p>If you are not sure about which is your USB Drive, you can just unplug and replug thr device and find out out which device is listed after plugging the USB.</p>
+</blockquote>
+<h4 id="step-2-unmount-and-format-the-device">Step 2: Unmount and Format the Device</h4>
+<p>Before formatting the drive we need to unmount it, it can be done by the command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo umount /dev/<span style="color:#f92672">{</span>your_device_name<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Where you need to replace <code>{your_device_name}</code> by the device name you found from the Step 1.</p>
+<p><img src="./images/umount_output.png" alt="umount output"></p>
+<p>To format the drive to our desired File System we can execute either of the following commamds</p>
+<h6 id="fat32">FAT32</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkfs.vfat /dev/<span style="color:#f92672">{</span>your_device_name<span style="color:#f92672">}</span> -n <span style="color:#f92672">{</span>NAME<span style="color:#f92672">}</span>
+</span></span></code></pre></div><h6 id="ntfs">NTFS</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkfs.ntfs /dev/<span style="color:#f92672">{</span>your_device_name<span style="color:#f92672">}</span> -n <span style="color:#f92672">{</span>NAME<span style="color:#f92672">}</span>
+</span></span></code></pre></div><h6 id="exfat">exFAT</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkfs.exfat /dev/<span style="color:#f92672">{</span>your_device_name<span style="color:#f92672">}</span> -n <span style="color:#f92672">{</span>NAME<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Where you need to replace <code>{your_device_name}</code> by the device name you found from the Step 1 and you can name the drive by replacing <code>{NAME}</code> with any name you like or you can just opt out the <code>-n {NAME}</code> part from the commands.</p>
+<p>In this exmaple we are formatting our drive in FAT32 file system, which is done by</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkfs.vfat /dev/sda1 -n PRANJAL
+</span></span></code></pre></div><p><img src="./images/mkfs_vfat_output.png" alt="output mkfs"></p>
+<h4 id="step-3-verify-the-formatting">Step 3: Verify The Formatting</h4>
+<p>You can verify the formatting process with the following command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fsck /dev/<span style="color:#f92672">{</span>your_device_name<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><img src="./images/fsck_output.png" alt="fsck output"></p>
+<p>It is indeed formatted in FAT (32 bit) file system, and with only 1 file, which is used to store the name of the drive that we have given.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this article it shown how to format an USB drive to an specified file system from the terminal, follow the steps in the blog to simplify the process.</p>
+
+        </article>
+    </div>
+
+    
+
+            </div>
+        </div><footer class="text-center pb-1">
+    <small class="text-muted">
+        
+            © Copyright 2024, Pranjal Das
+        
+        <br>
+    </small>
+</footer>
+</body>
+</html>
