@@ -7,15 +7,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright 2024, Pranjal Das</copyright>
-    <lastBuildDate>Sun, 30 Jun 2024 14:18:15 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jun 2024 14:07:47 +0530</lastBuildDate>
     <atom:link href="https://daspraanjal.github.io/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How to Disable IPv6 Permanenetly in Linux</title>
-      <link>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</link>
-      <pubDate>Sun, 30 Jun 2024 14:18:15 +0530</pubDate>
-      <guid>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</guid>
-      <description>In this blog I will show you, how you can enable or disable IPv6 in Linux.</description>
-    </item>
     <item>
       <title>How to Format an USB Drive From Terminal</title>
       <link>https://daspraanjal.github.io/post/how-to-format-an-usb-drive-from-terminal/</link>

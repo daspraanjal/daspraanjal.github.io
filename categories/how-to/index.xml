@@ -7,28 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright 2024, Pranjal Das</copyright>
-    <lastBuildDate>Tue, 02 Jul 2024 23:34:34 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jun 2024 15:01:20 +0530</lastBuildDate>
     <atom:link href="https://daspraanjal.github.io/categories/how-to/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How to Calculate Fault Current of a Busbar</title>
-      <link>https://daspraanjal.github.io/post/how-to-calculate-fault-current-of-a-busbar/how-to-calculate-fault-current-of-a-busbar/</link>
-      <pubDate>Tue, 02 Jul 2024 23:34:34 +0530</pubDate>
-      <guid>https://daspraanjal.github.io/post/how-to-calculate-fault-current-of-a-busbar/how-to-calculate-fault-current-of-a-busbar/</guid>
-      <description></description>
-    </item>
     <item>
       <title>How to Install Matlab in Linux</title>
       <link>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/how-to-install-matlab-in-linux/</link>
       <pubDate>Sun, 30 Jun 2024 15:01:20 +0530</pubDate>
       <guid>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/how-to-install-matlab-in-linux/</guid>
       <description>In this blog I will show you, how to install matlab in Linux.</description>
-    </item>
-    <item>
-      <title>How to Disable IPv6 Permanenetly in Linux</title>
-      <link>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</link>
-      <pubDate>Sun, 30 Jun 2024 14:18:15 +0530</pubDate>
-      <guid>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</guid>
-      <description>In this blog I will show you, how you can enable or disable IPv6 in Linux.</description>
     </item>
     <item>
       <title>How to Format an USB Drive From Terminal</title>

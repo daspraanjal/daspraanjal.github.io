@@ -7,29 +7,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright 2024, Pranjal Das</copyright>
-    <lastBuildDate>Tue, 02 Jul 2024 23:37:55 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jun 2024 15:01:20 +0530</lastBuildDate>
     <atom:link href="https://daspraanjal.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Electrical</title>
-      <link>https://daspraanjal.github.io/tags/electrical/</link>
-      <pubDate>Tue, 02 Jul 2024 23:37:55 +0530</pubDate>
-      <guid>https://daspraanjal.github.io/tags/electrical/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Networking</title>
-      <link>https://daspraanjal.github.io/tags/networking/</link>
-      <pubDate>Tue, 02 Jul 2024 23:37:55 +0530</pubDate>
-      <guid>https://daspraanjal.github.io/tags/networking/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Power System</title>
-      <link>https://daspraanjal.github.io/tags/power-system/</link>
-      <pubDate>Tue, 02 Jul 2024 23:34:34 +0530</pubDate>
-      <guid>https://daspraanjal.github.io/tags/power-system/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Linux</title>
       <link>https://daspraanjal.github.io/tags/linux/</link>
@@ -47,7 +26,7 @@
     <item>
       <title>Terminal</title>
       <link>https://daspraanjal.github.io/tags/terminal/</link>
-      <pubDate>Sun, 30 Jun 2024 14:18:15 +0530</pubDate>
+      <pubDate>Sun, 30 Jun 2024 14:07:47 +0530</pubDate>
       <guid>https://daspraanjal.github.io/tags/terminal/</guid>
       <description></description>
     </item>
