@@ -94,7 +94,7 @@
             <h5>In this blog it is shown how to install MATLAB 2018a in a Linux machine</h5>
             
             <small class="text-muted">
-              Published June 30, 2024 | 2 min 
+              Published June 30, 2024 | 3 min 
             </small>
         </div>
         <article>
@@ -132,30 +132,55 @@
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp -r /media/mathworks/dvd2/* /media/mathworks/installer/
 </span></span></code></pre></div><h3 id="run-the-installer">Run The Installer</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sh /media/mathworks/installer/install
-</span></span></code></pre></div><p>The installer will run, it will ask for installation location, which modules you wish to install.</p>
+</span></span></code></pre></div><p>The installer will run, it will ask for installation location, which modules you wish to install. In the middle of the installation it will ask for a product key or online license. <em>I have a Product Key</em> option should be selected and the product key is stored in the <code>readme.txt</code> file</p>
+<h3 id="post-installation-operations">Post Installation Operations</h3>
+<ul>
+<li>
+<p>Copy the <code>license_standalone.lic</code> to the license directory at the installation directory</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp /path/to/license_standalone.lic /path/to/installation/directory/licenses/
+</span></span></code></pre></div></li>
+<li>
+<p>Similarly the <code>libmwgrimpl.so</code> file should be replaced by the provided libmwgrimpl.so file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp /path/to/libmwgrimpl.so /path/to/installation/directory/libmwgrimpl.so
+</span></span></code></pre></div></li>
+<li>
+<p>Create a <code>matlab.desktop</code> file to create a desktop icon for the application</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch ~/.local/share/applications/matlab.desktop
+</span></span></code></pre></div><p>Open the .desktop file with nano</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano ~/.local/share/applications/matlab.desktop
+</span></span></code></pre></div><p>And paste the following entries</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>Desktop Entry<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Encoding<span style="color:#f92672">=</span>UTF-8
+</span></span><span style="display:flex;"><span>Version<span style="color:#f92672">=</span>R2018a
+</span></span><span style="display:flex;"><span>Type<span style="color:#f92672">=</span>Application
+</span></span><span style="display:flex;"><span>Terminal<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span>Exec<span style="color:#f92672">=</span>/path/to/executable/file/matlab -desktop
+</span></span><span style="display:flex;"><span>Name<span style="color:#f92672">=</span>MATLAB
+</span></span><span style="display:flex;"><span>Icon<span style="color:#f92672">=</span>/path/to/icon/file
+</span></span></code></pre></div></li>
+<li>
+<p>To launch matlab from terminal aliases are set as</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias matlab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exec /path/to/bin/matlab&#34;</span>
+</span></span><span style="display:flex;"><span>alias matlabcli<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exec /path/to/bin/matlab -nodekstop&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<p>Now MATLAB 2018a is almost ready to be used from the application center, or from the terminal itself.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this blog it shown how to install MATLAB 2018a is installed from 2 iso dvds provided by mathworks. All the settings are done in step by step manner and MATLAB should be ready to be launched, but there can be some font issue or some library issues which may lead to no window launching or simulink does not open etc. But they can be resolved by some tweaking.</p>
 
         </article>
     
       <p class="h-100 d-flex justify-content-between">
 	      
-	      <a class="link-reverse pl-2" href="https://daspraanjal.github.io/post/how-to-create-partitions-in-linux/?ref=footer">Previous</a>
+	      <a class="link-reverse" href="https://daspraanjal.github.io/post/how-to-create-partitions-in-linux/?ref=footer">Previous</a>
 	      
       
 	      
-        <a class="link-reverse pr-2" href="https://daspraanjal.github.io/post/how-to-format-an-usb-drive-from-terminal/?ref=footer">Next</a>
+        <a class="link-reverse" href="https://daspraanjal.github.io/post/how-to-format-an-usb-drive-from-terminal/?ref=footer">Next</a>
 	      
       </p>
     </div>
     
-      <div id="cusdis_thread"
-      data-host="https://cusdis.com"
-      data-app-id="70a1e5f2-a7ac-4ea4-bc4d-90ade0dafd8f"
-      data-page-id="7ac7992d31495d5cc04d998b367255e5"
-      data-page-url="https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/how-to-install-matlab-in-linux/"
-      data-page-title="How to Install Matlab in Linux"
-      ></div>
-    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-
 
             </div>
         </div><footer class="text-center pb-1 mb-4">
