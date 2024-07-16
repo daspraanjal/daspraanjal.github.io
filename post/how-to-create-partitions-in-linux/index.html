@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-us"><head>
+<html lang="en-US"><head>
     <title>Pranjal Das</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +17,7 @@
     
 </head>
 <body>
-        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+        <div id="content" class="mx-auto pb-5"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
     <div class="row">
         
         <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
@@ -25,7 +25,7 @@
                 <img id="home-image" class="rounded-circle"
                     
                         
-                            src="/images/profile_pic.jpeg"
+                            src="/images/profile_pic.jpg"
                         
                     
                 />
@@ -87,15 +87,16 @@
     <hr />
 </header>
 <div class="container">
-    <div class="pl-sm-2">
+    <div class="pl-sm-2 mb-5">
         <div class="mb-3">
             <h2 class="mb-0">How to Create Partitions in Linux</h2>
             
             <h5>This blog shows how you can create, modify and delete partitions in Linux from the Terminal</h5>
             
-            <small class="text-muted">Published July 13, 2024</small>
+            <small class="text-muted">
+              Published July 13, 2024 | 5 min 
+            </small>
         </div>
-
         <article>
             <p>Creating and modifying disk partitions is helpful for maintaining multiple file systems on same physical drive. It can simplify the backup process and system upgradation. In this blog we will use a command line utility called <em>fdisk</em> to create a partition in a disk.</p>
 <h3 id="partitioning-disk-using-fdisk-command">Partitioning Disk Using fdisk command</h3>
@@ -112,7 +113,7 @@
 </span></span></code></pre></div><p>From the output of the command we can locate our desired disk where we want to create our new partition</p>
 <p><img src="./images/fdisk_output.png" alt="fdisk -l output"></p>
 <p>In this tutorial, we will use our USB stick as the disk on which we will create a new partition, and it is listed as disk <code>/dev/sda</code>.</p>
-<h3 id="step-2-selecting-the-disk">Step 2: Selecting the Disk</h3>
+<h4 id="step-2-selecting-the-disk">Step 2: Selecting the Disk</h4>
 <p>At first we need to unmount all the current partitions that are listed under the disk <code>/dev/sda</code> to perform any operations on it. Here, we have only partition that is currently listed under <code>/dev/sda</code> named as
 <code>/dev/sda1</code>.</p>
 <p>It can be unmounted with the command</p>
@@ -122,15 +123,64 @@
 </span></span></code></pre></div><p>Where will need to replace <code>/dev/sda</code> with the disk that you will operate on</p>
 <p><img src="./images/fdisk_diskname_output.png" alt="fdisk diskname output"></p>
 <p>The output shows a red warning that the device contains &lsquo;vfat&rsquo; signature and it will be erased after we perform the wrire operation, which is not that important.</p>
-<h3 id="step-3-performing-operations-on-the-disk">Step 3: Performing Operations on The Disk</h3>
+<h4 id="step-3-performing-operations-on-the-disk">Step 3: Performing Operations on The Disk</h4>
+<p>At present the existing partition consumes the whole disk space, there is no free space to create a new partition, so at first we will resize (shrink) the current partition size, using the command <code>e</code></p>
+<p><img src="./images/partition_operation01.png" alt="partition operation 01"></p>
+<p>After executing the command, fdisk selects the only existing partition, and prompts us to enter the new partition size that we desire. We can enter the new size in terms of <em>KB, MB, GB, TB or PB</em> in bytes, or we can enter the new size in terms of <em>sectors</em>.</p>
+<blockquote>
+<p>Please note that, if you have some existing data in the drive, you need to make sure that the files should fit in the new shrinked partition size, otherwise you may end up losing your data forever</p>
+</blockquote>
+<p>After entering the new partition size, we press enter</p>
+<p><img src="./images/partition_operation02.png" alt="partition operation 02"></p>
+<p>And the old partition is resized, now the remaining space is unallocated. We will use this space to create the new partition. To create a new partition we will type in <code>n</code> and press enter</p>
+<p><img src="./images/partition_operation03.png" alt="partition operation 03"></p>
+<p>It prompts to choose the new partition type, in this case we will create a primary partition. As the default selected partition type is <em>primary partition</em>, just press enter</p>
+<p><img src="./images/partition_operation04.png" alt="partition operation 04"></p>
+<p>Next it prompts us to enter the partition number, as this is our 2nd partition in the disk, press enter to choose partition number = 2</p>
+<p><img src="./images/partition_operation05.png" alt="partition operation 05"></p>
+<p>Now we have to choose the starting point (or first sector) from which the physical address of second partition starts, we will go with the default option and press enter</p>
+<p><img src="./images/partition_operation06.png" alt="partition operation 06"></p>
+<p>Next, we have to enter the last sector (or the ending point) of our new partition, and to include all the free space availabe on the disk in our new partition we will press enter to go with the default option</p>
+<p><img src="./images/partition_operation07.png" alt="partition operation 07"></p>
+<p>And our new partition has been created, to apply all this operation on the disk, we need to write these operations</p>
+<h4 id="step-4-writing-the-operations">Step 4: Writing The Operations</h4>
+<p>To apply the operations and make the changes on the disk we need to write the operations, shown in step 3. And it is done by entering the command <code>w</code> and press enter</p>
+<p><img src="./images/partition_operation08.png" alt="partition operation 08"></p>
+<p>Voila! we have created a new partition in our USB Disk. Now to verify the process, we can again run the command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fdisk -l
+</span></span></code></pre></div><p>which gives us all the disk and partition data of installed disks</p>
+<p><img src="./images/new_partition_check.png" alt="new partition check"></p>
+<p>From the output it can be seen that in our disk <code>/dev/sda</code> we have 2 partitions -</p>
+<ul>
+<li><code>/dev/sda1</code> the old partition</li>
+<li><code>/dev/sda2</code> the new partition</li>
+</ul>
+<p>So successfuly we have created a new parition but currently the partition has no file system type, so we have to format the new partition in our desired file system.</p>
+<p>To format the drive in FAT32 file system, we have to execute the following commands</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo umount /dev/sda2
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkfs.vfat /dev/sda2
+</span></span></code></pre></div><p>And to check the filesystem format of the partition we can execute the command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fsck /dev/sda2
+</span></span></code></pre></div><p><img src="./images/check_filesystem.png" alt="check file system"></p>
+<p>We can see our new partition is indeed formatted in FAT (32 bit) file system and we are done creating a new partition on our USB drive from the terminal!</p>
+<p>To format the partition in any other file system type <a href="https://daspraanjal.github.io/post/how-to-format-an-usb-drive-from-terminal/">this blog</a> can be helpful.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this blog we have shown how to create a partition in Linux using the terminal commands. It can be also done by any GUI disk utility tool like <em>Gnome Disks</em> or <em>GParted</em> etc. But doing this tasks from terminal gives you some level of satisfaction ;)</p>
 
         </article>
+    
+      <p class="h-100 d-flex justify-content-between">
+	      
+      
+	      
+        <a class="link-reverse pr-2" href="https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/how-to-install-matlab-in-linux/?ref=footer">Next</a>
+	      
+      </p>
     </div>
-
     
 
             </div>
-        </div><footer class="text-center pb-1">
+        </div><footer class="text-center pb-1 mb-4">
     <small class="text-muted">
         
             © Copyright 2024, Pranjal Das
