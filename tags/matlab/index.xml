@@ -14,7 +14,7 @@
       <link>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/how-to-install-matlab-in-linux/</link>
       <pubDate>Sun, 30 Jun 2024 15:01:20 +0530</pubDate>
       <guid>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/how-to-install-matlab-in-linux/</guid>
-      <description>In this blog I will show you, how to install matlab in Linux.</description>
+      <description>Prerequisites Administrative access unrar CLI utility tool unrar can be installed with the command&#xA;Ubuntu sudo apt install unrar Fedora sudo dnf install unrar Extracting the Package At first we need to extract the contents of the downloaded MATLAB 2018a rar file, it can be done with the command&#xA;unrar x &amp;lt;filename&amp;gt;.rar In the extracting process it might ask for a password, the password should be provided by mathworks.&#xA;After the extraction process there sould be 2 iso files in the extracted folder, we need to mount this iso files to combine them into 1 installer file, but at first we need need create the mount points</description>
     </item>
   </channel>
 </rss>
