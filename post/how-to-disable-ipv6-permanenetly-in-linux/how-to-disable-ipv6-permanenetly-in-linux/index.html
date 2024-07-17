@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-us"><head>
+<html lang="en-US"><head>
     <title>Pranjal Das</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +17,7 @@
     
 </head>
 <body>
-        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+        <div id="content" class="mx-auto pb-5"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
     <div class="row">
         
         <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
@@ -25,7 +25,7 @@
                 <img id="home-image" class="rounded-circle"
                     
                         
-                            src="/images/profile_pic.jpeg"
+                            src="/images/profile_pic.jpg"
                         
                     
                 />
@@ -56,6 +56,10 @@
                         <a class="badge badge-white " href="/post/" title="posts">Posts</a>
                     </li>
                 
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="/archives" title="archives">Archives</a>
+                    </li>
+                
             </ul>
             <ul id="nav-social" class="list-inline">
                 
@@ -83,29 +87,91 @@
     <hr />
 </header>
 <div class="container">
-    <div class="pl-sm-2">
+    <div class="pl-sm-2 mb-5">
         <div class="mb-3">
             <h2 class="mb-0">How to Disable IPv6 Permanenetly in Linux</h2>
             
-            <small class="text-muted">Published June 30, 2024</small>
+            <h5>In this blog we will see how to make persistent changes to IPv6 protocol in your Linux computer</h5>
+            
+            <small class="text-muted">
+              Published July 17, 2024 | 1 min 
+            </small>
         </div>
-
         <article>
-            <p>In this blog I will show you, how you can enable or disable IPv6 in Linux.</p>
+            <h3 id="disable-ipv6">Disable IPv6</h3>
+<h4 id="disable-ipv6-temporarily">Disable IPv6 Temporarily</h4>
+<h5 id="for-all-network-interfaces">For all Network Interfaces</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.all.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.default.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h5 id="for-a-specific-network-interface">For a Specific Network Interface</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.<span style="color:#f92672">{</span>eth0<span style="color:#f92672">}</span>.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>Replace <code>{eth0}</code> with teh interface name for which you want to disable the IPv6</p>
+<h4 id="disable-ipv6-permanenetly">Disable IPv6 Permanenetly</h4>
+<p>Modify the <code>/etc/sysctl.conf</code> file to disable IPv6 permanenetly</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/sysctl.conf
+</span></span></code></pre></div><p>Then modify the entries as follow</p>
+<h5 id="for-all-network-interfaces-1">For All Network Interfaces</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv6.conf.all.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>net.ipv6.conf.default.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h5 id="for-a-specific-network-interface-1">For a Specific Network Interface</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv6.conf.<span style="color:#f92672">{</span>eth0<span style="color:#f92672">}</span>.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>Now restart the computer to apply the changes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo reboot
+</span></span></code></pre></div><h3 id="enable-ipv6">Enable IPv6</h3>
+<h4 id="enable-ipv6-temporarily">Enable IPv6 Temporarily</h4>
+<h5 id="for-all-network-interfaces-2">For all Network Interfaces</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.all.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.default.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h5 id="for-a-specific-network-interface-2">For a Specific Network Interface</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.<span style="color:#f92672">{</span>eth0<span style="color:#f92672">}</span>.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h4 id="enable-ipv6-permanenetly">Enable IPv6 Permanenetly</h4>
+<h5 id="for-all-network-interfaces-3">For All Network Interfaces</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv6.conf.all.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>net.ipv6.conf.default.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h5 id="for-a-specific-network-interface-3">For a Specific Network Interface</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv6.conf.<span style="color:#f92672">{</span>eth0<span style="color:#f92672">}</span>.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>Now restart the computer to apply the changes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo reboot
+</span></span></code></pre></div><h3 id="conclusion">Conclusion</h3>
 
         </article>
+    
+      <div class="pb-0">
+	      
+      
+	      
+        <a class="link-reverse badge badge-white " style="float: right;" href="https://daspraanjal.github.io/post/how-to-create-partitions-in-linux/">Next</a>
+	      
+      </div>
     </div>
-
     
 
             </div>
-        </div><footer class="text-center pb-1">
+        </div><footer class="text-center pb-2">
+    <div class="mb-0">
     <small class="text-muted">
         
             © Copyright 2024, Pranjal Das
         
         <br>
     </small>
+    </div>
+    <ul id="" class="list-unstyled  mb-0">
+        
+        
+            <li class="list-inline-item">
+                <a class="badge badge-white " href="/" title="about">About</a>
+            </li>
+        
+            <li class="list-inline-item">
+                <a class="badge badge-white " href="/post/" title="posts">Posts</a>
+            </li>
+        
+            <li class="list-inline-item">
+                <a class="badge badge-white " href="/archives" title="archives">Archives</a>
+            </li>
+        
+    </ul>
 </footer>
 </body>
 </html>

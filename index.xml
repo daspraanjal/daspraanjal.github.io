@@ -10,6 +10,13 @@
     <lastBuildDate>Sun, 30 Jun 2024 15:10:18 +0530</lastBuildDate>
     <atom:link href="https://daspraanjal.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>How to Disable IPv6 Permanenetly in Linux</title>
+      <link>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</link>
+      <pubDate>Wed, 17 Jul 2024 03:18:15 +0530</pubDate>
+      <guid>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</guid>
+      <description>Disable IPv6 Disable IPv6 Temporarily For all Network Interfaces sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 For a Specific Network Interface sudo sysctl -w net.ipv6.conf.{eth0}.disable_ipv6=1 Replace {eth0} with teh interface name for which you want to disable the IPv6&#xA;Disable IPv6 Permanenetly Modify the /etc/sysctl.conf file to disable IPv6 permanenetly&#xA;sudo nano /etc/sysctl.conf Then modify the entries as follow&#xA;For All Network Interfaces net.ipv6.conf.all.disable_ipv6=1 net.ipv6.conf.default.disable_ipv6=1 For a Specific Network Interface net.</description>
+    </item>
+    <item>
       <title>How to Create Partitions in Linux</title>
       <link>https://daspraanjal.github.io/post/how-to-create-partitions-in-linux/</link>
       <pubDate>Sat, 13 Jul 2024 16:48:23 +0530</pubDate>
@@ -17,18 +24,18 @@
       <description>Creating and modifying disk partitions is helpful for maintaining multiple file systems on same physical drive. It can simplify the backup process and system upgradation. In this blog we will use a command line utility called fdisk to create a partition in a disk.&#xA;Partitioning Disk Using fdisk command To partition a particular disk we will perform the following steps&#xA;Locating the disk on which we will create a partition Entering into an interative fdisk tui by selecting the drive Making necessary operations on the drive Writing the operations on the drive Step 1: Locating the drive We can list all the installed storage disks in our Linux machine using the command</description>
     </item>
     <item>
+      <title>How to Format an USB Drive From Terminal</title>
+      <link>https://daspraanjal.github.io/post/how-to-format-an-usb-drive-from-terminal/</link>
+      <pubDate>Sat, 13 Jul 2024 14:07:47 +0530</pubDate>
+      <guid>https://daspraanjal.github.io/post/how-to-format-an-usb-drive-from-terminal/</guid>
+      <description>Formatting an USB-stick is a pretty easy task to do, it can be done in multiple ways, like using File managers, GUI disk utility applications like Disks, GParted etc. It can also be done fairly easily from terminal and this blog will show you how to.&#xA;Which File System You Are Going To Use The file systems you can use for formatting a USB drive differ by maximum file size and operating system compatibility.</description>
+    </item>
+    <item>
       <title>How to Install Matlab in Linux</title>
       <link>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/how-to-install-matlab-in-linux/</link>
       <pubDate>Sun, 30 Jun 2024 15:01:20 +0530</pubDate>
       <guid>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/how-to-install-matlab-in-linux/</guid>
       <description>Prerequisites Administrative access unrar CLI utility tool unrar can be installed with the command&#xA;Ubuntu sudo apt install unrar Fedora sudo dnf install unrar Extracting the Package At first we need to extract the contents of the downloaded MATLAB 2018a rar file, it can be done with the command&#xA;unrar x &amp;lt;filename&amp;gt;.rar In the extracting process it might ask for a password, the password should be provided by mathworks.&#xA;After the extraction process there sould be 2 iso files in the extracted folder, we need to mount this iso files to combine them into 1 installer file, but at first we need need create the mount points</description>
-    </item>
-    <item>
-      <title>How to Format an USB Drive From Terminal</title>
-      <link>https://daspraanjal.github.io/post/how-to-format-an-usb-drive-from-terminal/</link>
-      <pubDate>Sun, 30 Jun 2024 14:07:47 +0530</pubDate>
-      <guid>https://daspraanjal.github.io/post/how-to-format-an-usb-drive-from-terminal/</guid>
-      <description>Formatting an USB-stick is a pretty easy task to do, it can be done in multiple ways, like using File managers, GUI disk utility applications like Disks, GParted etc. It can also be done fairly easily from terminal and this blog will show you how to.&#xA;Which File System You Are Going To Use The file systems you can use for formatting a USB drive differ by maximum file size and operating system compatibility.</description>
     </item>
     <item>
       <title>Markdown Syntax Guide</title>

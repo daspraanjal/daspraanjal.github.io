@@ -5,23 +5,16 @@
     <link>https://daspraanjal.github.io/tags/networking/</link>
     <description>Recent content in Networking on Pranjal Das</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <copyright>© Copyright 2024, Pranjal Das</copyright>
-    <lastBuildDate>Tue, 02 Jul 2024 23:37:55 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2024 03:18:15 +0530</lastBuildDate>
     <atom:link href="https://daspraanjal.github.io/tags/networking/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Understanding the OSI Model</title>
-      <link>https://daspraanjal.github.io/post/understanding-the-osi-model/understanding-the-osi-model/</link>
-      <pubDate>Tue, 02 Jul 2024 23:37:55 +0530</pubDate>
-      <guid>https://daspraanjal.github.io/post/understanding-the-osi-model/understanding-the-osi-model/</guid>
-      <description></description>
-    </item>
     <item>
       <title>How to Disable IPv6 Permanenetly in Linux</title>
       <link>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</link>
-      <pubDate>Sun, 30 Jun 2024 14:18:15 +0530</pubDate>
+      <pubDate>Wed, 17 Jul 2024 03:18:15 +0530</pubDate>
       <guid>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</guid>
-      <description>In this blog I will show you, how you can enable or disable IPv6 in Linux.</description>
+      <description>Disable IPv6 Disable IPv6 Temporarily For all Network Interfaces sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 For a Specific Network Interface sudo sysctl -w net.ipv6.conf.{eth0}.disable_ipv6=1 Replace {eth0} with teh interface name for which you want to disable the IPv6&#xA;Disable IPv6 Permanenetly Modify the /etc/sysctl.conf file to disable IPv6 permanenetly&#xA;sudo nano /etc/sysctl.conf Then modify the entries as follow&#xA;For All Network Interfaces net.ipv6.conf.all.disable_ipv6=1 net.ipv6.conf.default.disable_ipv6=1 For a Specific Network Interface net.</description>
     </item>
   </channel>
 </rss>
