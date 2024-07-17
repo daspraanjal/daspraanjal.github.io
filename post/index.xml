@@ -10,11 +10,11 @@
     <lastBuildDate>Wed, 17 Jul 2024 03:18:15 +0530</lastBuildDate>
     <atom:link href="https://daspraanjal.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to Disable IPv6 Permanenetly in Linux</title>
+      <title>Enable or Disable IPv6 in Linux</title>
       <link>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</link>
       <pubDate>Wed, 17 Jul 2024 03:18:15 +0530</pubDate>
       <guid>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</guid>
-      <description>Disable IPv6 Disable IPv6 Temporarily For all Network Interfaces sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 For a Specific Network Interface sudo sysctl -w net.ipv6.conf.{eth0}.disable_ipv6=1 Replace {eth0} with teh interface name for which you want to disable the IPv6&#xA;Disable IPv6 Permanenetly Modify the /etc/sysctl.conf file to disable IPv6 permanenetly&#xA;sudo nano /etc/sysctl.conf Then modify the entries as follow&#xA;For All Network Interfaces net.ipv6.conf.all.disable_ipv6=1 net.ipv6.conf.default.disable_ipv6=1 For a Specific Network Interface net.</description>
+      <description>Disabling IPv6 on a Linux computer can be done for several reasons. While IPv6 is the future of networking, there are situations where disabling it might be beneficial, like&#xA;Network Compatibilty Issues Performance Issues Security Concerns Lack of ISP Support In these cases disabling IPv6 might help. In this blog it is demonstrated how one can change the IPv6 settings temporarily or permanenetly&#xA;Disable IPv6 IPv6 can be disabled for a temporary period, and on the next restart the settings will set to the previous default settings.</description>
     </item>
     <item>
       <title>How to Create Partitions in Linux</title>

@@ -89,50 +89,65 @@
 <div class="container">
     <div class="pl-sm-2 mb-5">
         <div class="mb-3">
-            <h2 class="mb-0">How to Disable IPv6 Permanenetly in Linux</h2>
+            <h2 class="mb-0">Enable or Disable IPv6 in Linux</h2>
             
             <h5>In this blog we will see how to make persistent changes to IPv6 protocol in your Linux computer</h5>
             
             <small class="text-muted">
-              Published July 17, 2024 | 1 min 
+              Published July 17, 2024 | 3 min 
             </small>
         </div>
         <article>
-            <h3 id="disable-ipv6">Disable IPv6</h3>
+            <p>Disabling IPv6 on a Linux computer can be done for several reasons. While IPv6 is the future of networking, there are situations where disabling it might be beneficial, like</p>
+<ul>
+<li>Network Compatibilty Issues</li>
+<li>Performance Issues</li>
+<li>Security Concerns</li>
+<li>Lack of ISP Support</li>
+</ul>
+<p>In these cases disabling IPv6 might help. In this blog it is demonstrated how one can change the IPv6 settings temporarily or permanenetly</p>
+<h3 id="disable-ipv6">Disable IPv6</h3>
+<p>IPv6 can be disabled for a temporary period, and on the next restart the settings will set to the previous default settings. But this change can also be made persistent by modifying the config file, which will allways keep the IPv6 disabled unless you enable it again</p>
 <h4 id="disable-ipv6-temporarily">Disable IPv6 Temporarily</h4>
-<h5 id="for-all-network-interfaces">For all Network Interfaces</h5>
+<p>To disable IPv6 for a temporary period of time, the following commands will do the work</p>
+<h5 id="for-all-network-interfaces">For All Network Interfaces</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.all.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.default.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><h5 id="for-a-specific-network-interface">For a Specific Network Interface</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.<span style="color:#f92672">{</span>eth0<span style="color:#f92672">}</span>.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</span></span></code></pre></div><p>Replace <code>{eth0}</code> with teh interface name for which you want to disable the IPv6</p>
-<h4 id="disable-ipv6-permanenetly">Disable IPv6 Permanenetly</h4>
-<p>Modify the <code>/etc/sysctl.conf</code> file to disable IPv6 permanenetly</p>
+</span></span></code></pre></div><p>Where you need to Replace <code>{eth0}</code> with the interface name for which you want to disable the IPv6</p>
+<h4 id="disable-ipv6-permanently">Disable IPv6 Permanently</h4>
+<p>To disable IPv6 permanenetly we need to make some modifications on the file <code>/etc/sysctl.conf</code>, or a new file can be created at <code>/etc/sysctl.d/sysctl.conf</code> where the changes can be made, without modifying the original <code>sysctl.conf</code> file</p>
+<p>But here I will put the modifications in the original file, so lets open the file with nano</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/sysctl.conf
-</span></span></code></pre></div><p>Then modify the entries as follow</p>
+</span></span></code></pre></div><p>Then the following lines can be added to file to permanenetly disable the IPv6</p>
 <h5 id="for-all-network-interfaces-1">For All Network Interfaces</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv6.conf.all.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>net.ipv6.conf.default.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><h5 id="for-a-specific-network-interface-1">For a Specific Network Interface</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv6.conf.<span style="color:#f92672">{</span>eth0<span style="color:#f92672">}</span>.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</span></span></code></pre></div><p>Now restart the computer to apply the changes</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo reboot
-</span></span></code></pre></div><h3 id="enable-ipv6">Enable IPv6</h3>
+</span></span></code></pre></div><p>To apply the changes we can run</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -p
+</span></span></code></pre></div><p>Which will load all the changes made on the file <code>/etc/sysctl.conf</code> or the files in the directory <code>/etc/sysctl.d/</code></p>
+<h3 id="enable-ipv6">Enable IPv6</h3>
+<p>Though IPv6 sometimes may create some problem but it is the future, it has larger address space, if configured properly IPv6 is more secure, supports SLAAC allowing devices to automatically configure their own IP addresses without the need for a DHCP server, does not require NAT and almost all modern protocols and applications are designed to work over IPv6. So it might be a good idea to enable IPv6 in your computer</p>
+<p>Now enableing IPv6 is just the same process as disabling it, but the values are just changed from <em>1</em> to <em>0</em></p>
 <h4 id="enable-ipv6-temporarily">Enable IPv6 Temporarily</h4>
 <h5 id="for-all-network-interfaces-2">For all Network Interfaces</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.all.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.default.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><h5 id="for-a-specific-network-interface-2">For a Specific Network Interface</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -w net.ipv6.conf.<span style="color:#f92672">{</span>eth0<span style="color:#f92672">}</span>.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-</span></span></code></pre></div><h4 id="enable-ipv6-permanenetly">Enable IPv6 Permanenetly</h4>
+</span></span></code></pre></div><h4 id="enable-ipv6-permanently">Enable IPv6 Permanently</h4>
 <h5 id="for-all-network-interfaces-3">For All Network Interfaces</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv6.conf.all.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>net.ipv6.conf.default.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><h5 id="for-a-specific-network-interface-3">For a Specific Network Interface</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv6.conf.<span style="color:#f92672">{</span>eth0<span style="color:#f92672">}</span>.disable_ipv6<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-</span></span></code></pre></div><p>Now restart the computer to apply the changes</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo reboot
+</span></span></code></pre></div><p>To apply the changes, reload sysctl with the command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -p
 </span></span></code></pre></div><h3 id="conclusion">Conclusion</h3>
+<p>In this blog it is explained how one can change the IPv6 settings of their computer either temporarily or permanenetly, it is fairly straight forward to do so using the shown commands. I hope this blog will be helpful to people.</p>
 
         </article>
     
@@ -147,31 +162,32 @@
     
 
             </div>
-        </div><footer class="text-center pb-2">
-    <div class="mb-0">
-    <small class="text-muted">
+        </div><footer class="text-center ">
+    <div class="mb-2">
+    <ul id="" class="list-unstyled  mb-0">
+        
+        
+            <li class="list-inline-item mr-0 ml-0">
+                <a class="badge badge-white " href="/" title="about">About</a>
+            </li>
+        
+            <li class="list-inline-item mr-0 ml-0">
+                <a class="badge badge-white " href="/post/" title="posts">Posts</a>
+            </li>
+        
+            <li class="list-inline-item mr-0 ml-0">
+                <a class="badge badge-white " href="/archives" title="archives">Archives</a>
+            </li>
+        
+    </ul>
+    <small class="text-muted pb-2">
         
             © Copyright 2024, Pranjal Das
         
         <br>
     </small>
     </div>
-    <ul id="" class="list-unstyled  mb-0">
-        
-        
-            <li class="list-inline-item">
-                <a class="badge badge-white " href="/" title="about">About</a>
-            </li>
-        
-            <li class="list-inline-item">
-                <a class="badge badge-white " href="/post/" title="posts">Posts</a>
-            </li>
-        
-            <li class="list-inline-item">
-                <a class="badge badge-white " href="/archives" title="archives">Archives</a>
-            </li>
-        
-    </ul>
+
 </footer>
 </body>
 </html>
