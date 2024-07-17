@@ -11,9 +11,9 @@
     <atom:link href="https://daspraanjal.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Enable or Disable IPv6 in Linux</title>
-      <link>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</link>
+      <link>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/</link>
       <pubDate>Wed, 17 Jul 2024 03:18:15 +0530</pubDate>
-      <guid>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/how-to-disable-ipv6-permanenetly-in-linux/</guid>
+      <guid>https://daspraanjal.github.io/post/how-to-disable-ipv6-permanenetly-in-linux/</guid>
       <description>Disabling IPv6 on a Linux computer can be done for several reasons. While IPv6 is the future of networking, there are situations where disabling it might be beneficial, like&#xA;Network Compatibilty Issues Performance Issues Security Concerns Lack of ISP Support In these cases disabling IPv6 might help. In this blog it is demonstrated how one can change the IPv6 settings temporarily or permanenetly&#xA;Disable IPv6 IPv6 can be disabled for a temporary period, and on the next restart the settings will set to the previous default settings.</description>
     </item>
     <item>
@@ -32,9 +32,9 @@
     </item>
     <item>
       <title>How to Install Matlab in Linux</title>
-      <link>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/how-to-install-matlab-in-linux/</link>
+      <link>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/</link>
       <pubDate>Sun, 30 Jun 2024 15:01:20 +0530</pubDate>
-      <guid>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/how-to-install-matlab-in-linux/</guid>
+      <guid>https://daspraanjal.github.io/post/how-to-install-matlab-in-linux/</guid>
       <description>Prerequisites Administrative access unrar CLI utility tool unrar can be installed with the command&#xA;Ubuntu sudo apt install unrar Fedora sudo dnf install unrar Extracting the Package At first we need to extract the contents of the downloaded MATLAB 2018a rar file, it can be done with the command&#xA;unrar x &amp;lt;filename&amp;gt;.rar In the extracting process it might ask for a password, the password should be provided by mathworks.&#xA;After the extraction process there sould be 2 iso files in the extracted folder, we need to mount this iso files to combine them into 1 installer file, but at first we need need create the mount points</description>
     </item>
   </channel>

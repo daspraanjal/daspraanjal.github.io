@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en-us"><head>
+<html lang="en-US"><head>
     <title>Pranjal Das</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="" />
-
+    <meta name="google-site-verification" content="zEqefLvthq1vimslPCM8si9iIfHpxE8i4uci8KMLUX0" />
     
     
     
@@ -17,7 +17,7 @@
     
 </head>
 <body>
-        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+        <div id="content" class="mx-auto pb-5"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
     <div class="row">
         
         <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
@@ -25,7 +25,7 @@
                 <img id="home-image" class="rounded-circle"
                     
                         
-                            src="/images/profile_pic.jpeg"
+                            src="/images/profile_pic.jpg"
                         
                     
                 />
@@ -42,7 +42,7 @@
             </h2>
             <p class="text-muted mb-1">
                 
-                    Junior Engineer | Dastur | Kolkata, India
+                    Electric Design Engineer | Dastur | Kolkata, India
                 
             </p>
             <ul id="nav-links" class="list-inline mb-2">
@@ -54,6 +54,10 @@
                 
                     <li class="list-inline-item">
                         <a class="badge badge-white " href="/post/" title="posts">Posts</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="/archives" title="archives">Archives</a>
                     </li>
                 
             </ul>
@@ -83,31 +87,128 @@
     <hr />
 </header>
 <div class="container">
-    <div class="pl-sm-2">
+    <div class="pl-sm-2 mb-5">
         <div class="mb-3">
-            <h3 class="mb-0">How to Install Matlab in Linux</h3>
+            <h2 class="mb-0">How to Install Matlab in Linux</h2>
             
-            <small class="text-muted">Published June 30, 2024</small>
+            <h5>In this blog it is shown how to install MATLAB 2018a in a Linux machine</h5>
+            
+            <small class="text-muted">
+              Published June 30, 2024 | 3 min 
+            </small>
         </div>
-
         <article>
-            <p>In this blog I will show you, how to install matlab in Linux.</p>
+            <h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Administrative access</li>
+<li>unrar CLI utility tool</li>
+</ul>
+<p>unrar can be installed with the command</p>
+<h6 id="ubuntu">Ubuntu</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install unrar
+</span></span></code></pre></div><h6 id="fedora">Fedora</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install unrar
+</span></span></code></pre></div><h3 id="extracting-the-package">Extracting the Package</h3>
+<p>At first we need to extract the contents of the downloaded MATLAB 2018a rar file, it can be done with the command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>unrar x &lt;filename&gt;.rar
+</span></span></code></pre></div><p>In the extracting process it might ask for a password, the password should be provided by mathworks.</p>
+<p>After the extraction process there sould be 2 iso files in the extracted folder, we need to mount this iso files to combine them into 1 installer file, but at first we need need create the mount points</p>
+<h3 id="creating-the-mounting-points">Creating The Mounting points</h3>
+<p>To mount the iso files, the mounting point directories should be created first. We will make total 3 directories at <code>/media/</code></p>
+<ul>
+<li>dvd1 directory to mount the dvd1.iso file</li>
+<li>dvd2 directory to mount the dvd2.iso file</li>
+<li>installer directory to combine all the components of dvd1 &amp; dvd2 directory</li>
+</ul>
+<p>The following commands should be used to create the directories</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir -p /media/mathworks/dvd1
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir -p /media/mathworks/dvd2
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir -p /media/mathworks/installer
+</span></span></code></pre></div><h3 id="mounting-the-iso-files-to-mounting-points">Mounting The ISO Files to Mounting points</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mount -t iso9660 -o loop &lt;path to dvd1&gt;/dvd1.iso /media/mathworks/dvd1
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mount -t iso9660 -o loop &lt;path to dvd1&gt;/dvd2.iso /media/mathworks/dvd2
+</span></span></code></pre></div><h3 id="creating-the-installer">Creating The installer</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp -r /media/mathworks/dvd1/* /media/mathworks/installer/
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp -r /media/mathworks/dvd2/* /media/mathworks/installer/
+</span></span></code></pre></div><h3 id="run-the-installer">Run The Installer</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sh /media/mathworks/installer/install
+</span></span></code></pre></div><p>The installer will run, it will ask for installation location, which modules you wish to install. In the middle of the installation it will ask for a product key or online license. <em>I have a Product Key</em> option should be selected and the product key is stored in the <code>readme.txt</code> file</p>
+<h3 id="post-installation-operations">Post Installation Operations</h3>
+<ul>
+<li>
+<p>Copy the <code>license_standalone.lic</code> to the license directory at the installation directory</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp /path/to/license_standalone.lic /path/to/installation/directory/licenses/
+</span></span></code></pre></div></li>
+<li>
+<p>Similarly the <code>libmwgrimpl.so</code> file should be replaced by the provided libmwgrimpl.so file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp /path/to/libmwgrimpl.so /path/to/installation/directory/libmwgrimpl.so
+</span></span></code></pre></div></li>
+<li>
+<p>Create a <code>matlab.desktop</code> file to create a desktop icon for the application</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch ~/.local/share/applications/matlab.desktop
+</span></span></code></pre></div><p>Open the .desktop file with nano</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano ~/.local/share/applications/matlab.desktop
+</span></span></code></pre></div><p>And paste the following entries</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>Desktop Entry<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Encoding<span style="color:#f92672">=</span>UTF-8
+</span></span><span style="display:flex;"><span>Version<span style="color:#f92672">=</span>R2018a
+</span></span><span style="display:flex;"><span>Type<span style="color:#f92672">=</span>Application
+</span></span><span style="display:flex;"><span>Terminal<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span>Exec<span style="color:#f92672">=</span>/path/to/executable/file/matlab -desktop
+</span></span><span style="display:flex;"><span>Name<span style="color:#f92672">=</span>MATLAB
+</span></span><span style="display:flex;"><span>Icon<span style="color:#f92672">=</span>/path/to/icon/file
+</span></span></code></pre></div></li>
+<li>
+<p>To launch matlab from terminal aliases are set as</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias matlab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exec /path/to/bin/matlab&#34;</span>
+</span></span><span style="display:flex;"><span>alias matlabcli<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exec /path/to/bin/matlab -nodekstop&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<p>Now MATLAB 2018a is almost ready to be used from the application center, or from the terminal itself.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this blog it shown how to install MATLAB 2018a is installed from 2 iso dvds provided by mathworks. All the settings are done in step by step manner and MATLAB should be ready to be launched, but there can be some font issue or some library issues which may lead to no window launching or simulink does not open etc. But they can be resolved by some tweaking.</p>
 
         </article>
+    
+      <div class="pb-0">
+	      
+	      <a class="link-reverse badge badge-white" style="float: left;" href="https://daspraanjal.github.io/post/how-to-format-an-usb-drive-from-terminal/">Previous</a>
+	      
+      
+	      
+        <a class="link-reverse badge badge-white " style="float: right;" href="https://daspraanjal.github.io/post/markdown-syntax/">Next</a>
+	      
+      </div>
     </div>
-
     
 
             </div>
-        </div><footer class="text-center pb-1">
-    <small class="text-muted">
+        </div><footer class="text-center ">
+    <div class="mb-2">
+    <ul id="" class="list-unstyled  mb-0">
+        
+        
+            <li class="list-inline-item mr-0 ml-0">
+                <a class="badge badge-white " href="/" title="about">About</a>
+            </li>
+        
+            <li class="list-inline-item mr-0 ml-0">
+                <a class="badge badge-white " href="/post/" title="posts">Posts</a>
+            </li>
+        
+            <li class="list-inline-item mr-0 ml-0">
+                <a class="badge badge-white " href="/archives" title="archives">Archives</a>
+            </li>
+        
+    </ul>
+    <small class="text-muted pb-2">
         
             © Copyright 2024, Pranjal Das
         
         <br>
-        Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>
-        and <a href="https://github.com/austingebauer/devise" target="_blank">Devise</a>
     </small>
+    </div>
+
 </footer>
 </body>
 </html>
